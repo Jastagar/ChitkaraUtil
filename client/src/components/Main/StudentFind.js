@@ -1,20 +1,15 @@
 import React, {useEffect, useState} from 'react'
+import useInput from '../../Utils/useInput'
 import { studentFind } from '../../server/server';
+
 export default function StudentFind({ changeContent }) {
   
   const [active,setActive] = useState(false);
-  const [queryTypeName,setQueryTypeName] = useState(false);
-  const [query,setQuery] = useState('');
+  const query = useInput()
   const [info,setInfo] = useState('')
 
-  function handleQueryNameChange(event){
-    setQuery(event.target.value)
-  }
   function colapse(){
     setActive(!active);
-  }
-  function handleQueryTypeChange(){
-    setQueryTypeName(!queryTypeName);
   }
 
   useEffect(()=>{
@@ -23,16 +18,9 @@ export default function StudentFind({ changeContent }) {
 
   function handleStudentFind(event){
     event.preventDefault()
-    if(queryTypeName){
-      studentFind(query).then((res)=>{
-        setInfo(res.data)
-      })
-    }else{
-      studentFind(query,true).then((res)=>{
-        setInfo(res.data)
-      })
-    }
-    
+    studentFind({query:query.value,}).then((res)=>{
+      setInfo(res.data)
+    })
   }
   return (
     <div className="py-3 py-md-0">
@@ -41,11 +29,11 @@ export default function StudentFind({ changeContent }) {
           <form onSubmit={handleStudentFind} className={`flex-column justify-content-between ${active? 'classShow':''}`} id="studentFindForm">
               <fieldset>
                   <label htmlFor="studentNameFind">by Name or Surname or RollNumber</label>
-                  <input onChange={handleQueryNameChange} className="my-3 w-100" type="text" name="studentNameFind" id="studentNameFind"></input>
+                  <input {...query} id="studentNameFind"></input>
               </fieldset>
               <fieldset>
-                  <input onClick={handleQueryTypeChange} className="my-3 pb-3" type="checkbox" name="queryType" id="queryType"></input>
                   <label htmlFor="queryType">by sername</label>
+                  <input className="my-3 pb-3" type="checkbox" name="queryType" id="queryType"></input>
               </fieldset>
               <button type="submit" className="getData btn btn-primary">Find this student</button>
           </form>

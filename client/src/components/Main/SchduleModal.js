@@ -24,3 +24,4 @@ export default function SchduleModal({ image, groupNumber }) {
     </div>
   )
 }
+// mongodb+srv://:@cluster0.bpdao.mongodb.net/Schdule

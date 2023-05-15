@@ -12,7 +12,6 @@ Mongo.connectToMongoose()
 
 app.use(compression())
 app.use(express.json())
-// app.use(morgan('tiny'))
 app.use(express.static('build'))
 app.use(cors())
 
