@@ -24,8 +24,8 @@ export default function StudentFind({ changeContent }) {
   }
   return (
     <div className="py-3 py-md-0">
-      <div className="p-3 border shadow d-flex flex-column overflow-hidden">
-          <button onClick={colapse} id="studentFind" className="dropDownBtn btn border border-3">Student Find</button>
+      <div className="p-3 d-flex flex-column overflow-hidden blur border rounded rounded-4">
+          <button onClick={colapse} id="studentFind" className="dropDownBtn btn text-light fs-3">Student Find</button>
           <form onSubmit={handleStudentFind} className={`flex-column justify-content-between ${active? 'classShow':''}`} id="studentFindForm">
               <fieldset>
                   <label htmlFor="studentNameFind">by Name or Surname or RollNumber</label>

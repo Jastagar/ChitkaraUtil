@@ -20,8 +20,8 @@ export default function SpecificFind({ changeContent }) {
   }
   return (
     <div className="py-3 py-md-0">
-      <div className="p-3 border shadow d-flex flex-column overflow-hidden">
-          <button onClick={colapse} id="specificFind" className="dropDownBtn btn w-100 border border-3">Specific Find</button>
+      <div className="p-3 shadow d-flex flex-column overflow-hidden blur border rounded rounded-4">
+          <button onClick={colapse} id="specificFind" className="dropDownBtn btn w-100 text-light fs-3">Specific Find</button>
           <form onSubmit={handleSubmit} className={`flex-column justify-content-between ${active? 'classShow':''}`} id="specificFindForm">
               <label htmlFor="dayQuery">Specify the day</label>
               <select name="selectDay" className="my-3 w-100" id="dayQuery" required>                        
