@@ -20,9 +20,9 @@ export default function QuickFind({ changeContent }) {
   
   return (
     <div className="py-3 py-md-0">
-        <div className="p-3 h-100 border shadow">
+        <div className="p-3 h-100  blur rounded rounded-4">
             <div className="h-100 d-flex flex-column justify-content-between">
-                <p>Use quick find to get free classes now</p>
+                <p className="text-light">Use quick find to get free classes now</p>
                 <a href="#showArea" onClick={handleQuickFind} className="btn btn-primary majorButtons p-2 my-1 flex-grow-1">Quick Find</a>
                 <a href="#showArea" onClick={handleQuickFindForNext} className="btn btn-secondary majorButtons p-2 my-1 flex-grow-1">Quick Find For Next</a>
             </div>
