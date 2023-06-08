@@ -1,10 +1,10 @@
 const apiHandler = require('express').Router()
-const Scdhule = require('../models/schdules')
 const Daily = require("../models/daily")
-const Students = require("../models/student")
+const Schedule=require('../models/schdules')
+const Student = require("../models/student")
 
 apiHandler.get("/classDatabase",(req,res)=>{
-    Scdhule.find({}).then((e)=>{
+    Schedule.find({}).then((e)=>{
         res.json(e).status(200)
     })
 })
@@ -14,7 +14,7 @@ apiHandler.get("/dailyDatabase",(req,res)=>{
     })
 })
 apiHandler.get("/studentsDatabase",(req,res)=>{
-    Students.find({}).then((e)=>{
+    Student.find({}).then((e)=>{
         res.json(e).status(200)
     })
 })

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const schdule = new mongoose.Schema(
+const schedule = new mongoose.Schema(
     {class: String,
         monday: {classes: [],occupancy: []},
         tuesday: {classes: [],occupancy: []},
@@ -9,11 +9,11 @@ const schdule = new mongoose.Schema(
         friday: {classes: [],occupancy: []}
 })
 
-schdule.set("toJSON",{
+schedule.set("toJSON",{
     transform:(document,returnedObject)=>{
         delete returnedObject._id
     }
 })
 
-
-module.exports = mongoose.model("Schdule",schdule)
+const Schedule = mongoose.model("schedule",schedule)
+module.exports = Schedule

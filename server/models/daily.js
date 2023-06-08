@@ -11,5 +11,5 @@ eachQuery.set("toJSON",{
     }
 })
 
-
-module.exports = mongoose.model("Daily",eachQuery)
+const Daily = mongoose.model("Daily",eachQuery)
+module.exports = Daily

@@ -37,8 +37,8 @@ function getNowPeriod(secNow) {
 }
 async function getQuery(day,period){
     const numberForQuery = ((day-1)*9) + parseInt(period)-1
-    const eachDaySchdule = await Daily.findOne({index:numberForQuery})
-    return eachDaySchdule['classes']
+    const eachDayschedule = await Daily.findOne({index:numberForQuery})
+    return eachDayschedule['classes']
 }
 async function getOccupiedClasses(day,period,dayToday){
     if(days[dayToday] === "Sunday"){
@@ -48,8 +48,8 @@ async function getOccupiedClasses(day,period,dayToday){
         return ['err',`Its Saturday, no classes today :)`]
     }
     const numberForQuery = ((day-1)*9) + parseInt(period)
-    const eachDaySchdule = await Daily.findOne({index:numberForQuery})
-    const classesInUse = eachDaySchdule['classes']
+    const eachDayschedule = await Daily.findOne({index:numberForQuery})
+    const classesInUse = eachDayschedule['classes']
     const mappedCIUarray = classesInUse.map((e)=>{
         return e[2]
     })

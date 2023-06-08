@@ -29,7 +29,7 @@ function specificFind(day,lecture){
     return axios.get(baseUrl + `search/${secNow}/${dayToday}/find/${day}/${lecture}`)
 }
 function studentFind(queryStudent,surname=false){
-    if(!surname){
+    if(surname){
         return axios.get(baseUrl + `search/${secNow}/${dayToday}/student/${queryStudent}/1`)
     }
     if(!queryStudent){

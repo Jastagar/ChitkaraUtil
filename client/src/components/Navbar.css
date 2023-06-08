@@ -1,0 +1,21 @@
+nav{
+    min-height: 5vh;
+    background-color: var(--bg-main);
+    /* border: solid black; */
+}
+.mainNav{
+    display: flex;
+    justify-content: center;
+}
+.mainNav a{
+    text-decoration: none;
+    text-align: center;
+    padding: 2rem;
+    color: inherit;
+    transition: all 0.5s;
+}
+.mainNav a:hover{
+    padding: 2rem 1.3rem;
+    background-color: white;
+    color: var(--bg-main);
+}

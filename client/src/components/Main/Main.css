@@ -1,0 +1,7 @@
+.MainComponent{
+    backdrop-filter: blur(10px);
+}
+.dropDownBtn{
+    text-align: justify;
+    border: none;
+}

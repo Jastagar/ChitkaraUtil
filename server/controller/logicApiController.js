@@ -1,6 +1,6 @@
 const logicApiController = require('express').Router()
 const logicalFunctions = require('../logic/script')
-const Students = require("../models/student")
+const Student = require("../models/student")
 
 var result = 'No button pressed yet'
 var dayToday=0
@@ -29,7 +29,7 @@ async function optimizedStudentFind(queryRL,queryN,querySurname){
         return ['err',"Koi number ya naam toh daal do phele :|"]
     }
     if(queryRL){
-        const found = await Students.findOne({rollnumber:queryRL})
+        const found = await Student.findOne({rollnumber:queryRL})
         if(found){
             return singleStudentFind(found)
         }else{
@@ -37,7 +37,7 @@ async function optimizedStudentFind(queryRL,queryN,querySurname){
         }
     }else{
         const nameRegx = querySurname? new RegExp(`${' '+queryN}`,"gi"):new RegExp(`^${queryN}`,"gi")
-        const found = await Students.find({name:nameRegx})
+        const found = await Student.find({name:nameRegx})
         if(found.length === 1){
             return singleStudentFind(found[0])
         }else if(found.length>1){

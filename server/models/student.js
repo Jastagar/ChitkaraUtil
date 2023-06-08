@@ -13,4 +13,5 @@ eachStudent.set("toJSON",{
     }
 })
 
-module.exports = mongoose.model("Students",eachStudent)
+const Student = mongoose.model("Students",eachStudent)
+module.exports = Student

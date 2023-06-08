@@ -1,0 +1,36 @@
+.renderHallContainer{
+
+}
+.MainCanvas{
+    min-height: 85vh;
+    background-color: #d9ffffd6;
+    border-radius: 24px;
+}
+.hallReplica{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.EachSeat{
+    text-align: center;
+    border: solid 1px transparent;
+    padding: 5px;
+}
+.EachSeat div{
+    font-size: 0.9rem;
+}
+.eachBlock{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.EachSeat:hover{
+    box-sizing: border-box;
+    border: solid 1px black;
+    color: black;
+    cursor: pointer;
+}

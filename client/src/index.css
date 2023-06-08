@@ -1,3 +1,6 @@
+:root{
+  --bg-main: #00caca;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +8,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  min-height: 105vh;
+}
+button{
+  border:none !important;
+}
+section{
+  min-height: 100vh;
 }
 td{
   width: 10%;
@@ -12,7 +23,7 @@ td{
 h1{
   font-size: 4rem;
 }
-.schdule{
+.schedule{
   overflow-x: hidden;
   font-size: auto;
 }
@@ -31,8 +42,8 @@ h1{
 }
 body{
   font-size: 1.3rem;
-  /* background: #f2f2f2; */
-  background-image: url("../public/images/bg.jpg");
+  background: var(--bg-main);
+  /* background-image: url("../public/images/bg.jpg"); */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
@@ -45,7 +56,7 @@ td{
 h1{
   font-size: 4rem;
 }
-.schdule{
+.schedule{
   overflow-x: hidden;
   font-size: auto;
 }
@@ -58,7 +69,6 @@ h1{
   width: 100%;
   padding: 5%;
   max-height: 80%;
-  border: 3px solid black;
   border-radius: 5px;
   background-color: #fff;
   overflow-y: scroll;
@@ -71,12 +81,14 @@ h1{
   align-items: center;
 }
 .classShow{
-  display: flex !important;
+  transition: all 1s;
+  max-height: 100vh !important;
 }
-#schduleFindForm, #studentFindForm, #specificFindForm{
-  display: none;
+#scheduleFindForm, #studentFindForm, #specificFindForm{
+  transition: all 0.5s;
+  max-height: 0px;
 }
-.schduleImage{
+.scheduleImage{
   height: 70vh;
 }
 .blur{
@@ -84,7 +96,16 @@ h1{
   box-shadow: 0px 0px 58px 30px #0000007d;
 }
 @media screen and (max-width:600px) {
-  .schduleImage{
+  .scheduleImage{
       height: 30vh;
   }    
 }
+
+
+.neuMorph{
+  border-radius: 24px;
+  background: var(--bg-main);
+  box-shadow:  7px 7px 25px #00a4a4,
+              -7px -7px 25px #00f0f0;
+}
+
