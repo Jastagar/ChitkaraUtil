@@ -16,7 +16,7 @@ export default function DisplayAreaComponent({ content }) {
         Name: <strong>{contentData[0]}</strong><br></br>
         RollNumber: <strong>{contentData[1]}</strong> <br></br>
         Group No.: <strong>{contentData[2]}</strong> <br></br>
-        This student has a free lecture, Khud Dhond lo :/
+        This student has a free lecture.
       </div>
     )
   }

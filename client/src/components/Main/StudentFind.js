@@ -37,8 +37,8 @@ export default function StudentFind({ changeContent }) {
                 <input {...query} id="studentNameFind"></input>
             </fieldset>
             <fieldset>
-                <label htmlFor="queryType">by sername</label>
-                <input className="my-3 pb-3" type="checkbox" name="queryType" id="queryType"></input>
+                <input className="m-3 pb-3" type="checkbox" name="queryType" id="queryType"></input>
+                <label htmlFor="queryType">by surname</label>
             </fieldset>
             <button className="getData btn btn-primary">Find this student</button>
         </form>
